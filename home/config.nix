@@ -13,6 +13,9 @@
     };
   };
 
+  programs.mpv.enable = true;
+  home.packages = [ pkgs.vlc-bin ];
+
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;
 }
