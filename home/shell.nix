@@ -13,7 +13,7 @@ in {
       rm = "rm -i";
       cat = "bat";
       df = "duf";
-      work = "workspace";
+      work = "cd $(workspace)";
       nix-shell = "nix-shell --command fish";
     };
     shellAbbrs = {
