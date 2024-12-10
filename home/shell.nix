@@ -71,6 +71,11 @@ in {
     nix-direnv.enable = true;
   };
 
+  programs.zellij = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   home.packages = with pkgs; [
     bat
     lsd
