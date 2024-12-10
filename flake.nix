@@ -8,9 +8,13 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     mac-app-util.url = "github:hraban/mac-app-util";
+    mac-app-util.inputs.nixpkgs.follows = "nixpkgs";
+    nur.url = "github:nix-community/NUR";
+    nur.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, mac-app-util }:
+  outputs =
+    inputs@{ self, nix-darwin, nixpkgs, home-manager, mac-app-util, nur }:
     let
       systems = [ "aarch64-darwin" ];
 
@@ -22,6 +26,12 @@
           }));
     in {
       darwinConfigurations."maxwell" = nix-darwin.lib.darwinSystem {
+        pkgs = import nixpkgs {
+          system = "aarch64-darwin";
+          overlays = [ nur.overlays.default ];
+          config.allowUnfree = true;
+        };
+
         modules = [
           mac-app-util.darwinModules.default
           {
@@ -34,6 +44,7 @@
 
             # The platform the configuration will be used on.
             nixpkgs.hostPlatform = "aarch64-darwin";
+            nixpkgs.config.allowUnfree = true;
           }
           ./darwin/config.nix
 

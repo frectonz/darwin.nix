@@ -1,5 +1,5 @@
 { pkgs, config, ... }: {
-  imports = [ ./shell.nix ./terminals.nix ./editors.nix ];
+  imports = [ ./shell.nix ./terminals.nix ./editors.nix ./browsers.nix ];
 
   services.gpg-agent.enable = true;
   programs.gpg.enable = true;
@@ -15,6 +15,8 @@
 
   programs.mpv.enable = true;
   home.packages = [ pkgs.vlc-bin ];
+
+  nixpkgs.config.allowUnfree = true;
 
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;
