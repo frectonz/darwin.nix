@@ -281,6 +281,8 @@
       "<leader>f" = "find_files";
     };
 
+    plugins.fidget.enable = true;
+
     plugins.lsp = {
       enable = true;
       inlayHints = true;
