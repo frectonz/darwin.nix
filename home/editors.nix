@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs.helix = {
     enable = true;
     settings = {
@@ -21,6 +21,264 @@
       keys.insert = {
         j = { k = "normal_mode"; }; # Maps `jk` to exit insert mode
       };
+    };
+  };
+
+  programs.nixvim = {
+    enable = true;
+    vimAlias = true;
+
+    opts = {
+      backup = false;
+      clipboard = "unnamedplus";
+      completeopt = [ "menuone" "noselect" ];
+      conceallevel = 0;
+      fileencoding = "utf-8";
+      hlsearch = true;
+      ignorecase = true;
+      mouse = "a";
+      pumheight = 10;
+      showmode = false;
+      showtabline = 2;
+      smartcase = true;
+      smartindent = true;
+      splitbelow = true;
+      splitright = true;
+      swapfile = false;
+      termguicolors = true;
+      timeoutlen = 1000;
+      undofile = true;
+      updatetime = 300;
+      writebackup = false;
+      expandtab = true;
+      shiftwidth = 2;
+      tabstop = 2;
+      cursorline = true;
+      number = true;
+      relativenumber = true;
+      numberwidth = 4;
+      signcolumn = "yes";
+      wrap = true;
+      scrolloff = 8;
+      sidescrolloff = 8;
+    };
+
+    globals = {
+      mapleader = " ";
+      maplocalleader = " ";
+    };
+
+    keymaps = let
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    in [
+      {
+        inherit options;
+        key = "<C-h>";
+        action = "<C-w>h";
+        mode = "n";
+      }
+      {
+        inherit options;
+        key = "<C-j>";
+        action = "<C-w>j";
+        mode = "n";
+      }
+      {
+        inherit options;
+        key = "<C-k>";
+        action = "<C-w>k";
+        mode = "n";
+      }
+      {
+        inherit options;
+        key = "<C-l>";
+        action = "<C-w>l";
+        mode = "n";
+      }
+      {
+        inherit options;
+        key = "<C-Up>";
+        action = ":resize -2<CR>";
+        mode = "n";
+      }
+      {
+        inherit options;
+        key = "<C-Down>";
+        action = ":resize +2<CR>";
+        mode = "n";
+      }
+      {
+        inherit options;
+        key = "<C-Left>";
+        action = ":vertical resize -2<CR>";
+        mode = "n";
+      }
+      {
+        inherit options;
+        key = "<C-Right>";
+        action = ":vertical resize +2<CR>";
+        mode = "n";
+      }
+      {
+        inherit options;
+        key = "<S-l>";
+        action = ":bnext<CR>";
+        mode = "n";
+      }
+      {
+        inherit options;
+        key = "<S-h>";
+        action = ":bprevious<CR>";
+        mode = "n";
+      }
+      {
+        inherit options;
+        key = "<A-j>";
+        action = "<Esc>:m .+1<CR>";
+        mode = "n";
+      }
+      {
+        inherit options;
+        key = "<A-k>";
+        action = "<Esc>:m .-2<CR>";
+        mode = "n";
+      }
+      {
+        inherit options;
+        key = "jk";
+        action = "<ESC>";
+        mode = "i";
+      }
+      {
+        inherit options;
+        key = "<";
+        action = "<gv";
+        mode = "v";
+      }
+      {
+        inherit options;
+        key = ">";
+        action = ">gv";
+        mode = "v";
+      }
+      {
+        inherit options;
+        key = "<A-j>";
+        action = ":m .+1<CR>==";
+        mode = "v";
+      }
+      {
+        inherit options;
+        key = "<A-k>";
+        action = ":m .-2<CR>==";
+        mode = "v";
+      }
+      {
+        inherit options;
+        key = "<A-k>";
+        action = ":move '<-2<CR>gv-gv";
+        mode = "x";
+      }
+      {
+        inherit options;
+        key = "<A-j>";
+        action = ":move '>+1<CR>gv-gv";
+        mode = "x";
+      }
+      {
+        inherit options;
+        key = "<leader>e";
+        action = ":Explore<cr>";
+        mode = "n";
+      }
+      {
+        inherit options;
+        key = "<Up>";
+        action = "";
+        mode = "";
+      }
+      {
+        inherit options;
+        key = "<Down>";
+        action = "";
+        mode = "";
+      }
+      {
+        inherit options;
+        key = "<Left>";
+        action = "";
+        mode = "";
+      }
+      {
+        inherit options;
+        key = "<Right>";
+        action = "";
+        mode = "";
+      }
+      {
+        inherit options;
+        key = "<leader>s";
+        action = ":w<CR>";
+        mode = "n";
+      }
+    ];
+
+    plugins.treesitter = {
+      enable = true;
+      settings = {
+        highlight = {
+          enable = true;
+          additional_vim_regex_highlighting = true;
+        };
+        indent = { enable = true; };
+        rainbow = {
+          enable = true;
+          extended_mode = true;
+        };
+        context_commentstring = {
+          enable = true;
+          enable_autocmd = false;
+        };
+      };
+
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        nix
+        lua
+        rust
+        commonlisp
+        astro
+        tsx
+        typescript
+        javascript
+        vimdoc
+        css
+        svelte
+        html
+        ocaml
+        elm
+        ruby
+        elixir
+        heex
+        unison
+        roc
+        hcl
+        terraform
+        hurl
+        graphql
+      ];
+    };
+
+    colorschemes.ayu.enable = true;
+    plugins.lualine.enable = true;
+
+    plugins.web-devicons.enable = true;
+    plugins.telescope.enable = true;
+    plugins.telescope.keymaps = {
+      "<leader>t" = "live_grep";
+      "<leader>f" = "find_files";
     };
   };
 

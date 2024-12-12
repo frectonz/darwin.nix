@@ -11,10 +11,13 @@
     mac-app-util.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    inputs@{ self, nix-darwin, nixpkgs, home-manager, mac-app-util, nur }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, mac-app-util, nur
+    , nixvim }:
     let
       systems = [ "aarch64-darwin" ];
 
@@ -51,8 +54,10 @@
           home-manager.darwinModules.home-manager
           {
             # To enable it for all users:
-            home-manager.sharedModules =
-              [ mac-app-util.homeManagerModules.default ];
+            home-manager.sharedModules = [
+              mac-app-util.homeManagerModules.default
+              nixvim.homeManagerModules.nixvim
+            ];
 
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
