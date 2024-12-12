@@ -364,5 +364,13 @@
     };
   };
 
+  programs.neovide = {
+    enable = true;
+    settings = {
+      fork = true;
+      maximized = true;
+    };
+  };
+
   home.sessionVariables = { EDITOR = "hx"; };
 }
