@@ -272,13 +272,17 @@
     };
 
     colorschemes.ayu.enable = true;
+
     plugins.lualine.enable = true;
+    plugins.bufferline.enable = true;
 
     plugins.web-devicons.enable = true;
-    plugins.telescope.enable = true;
-    plugins.telescope.keymaps = {
-      "<leader>t" = "live_grep";
-      "<leader>f" = "find_files";
+    plugins.telescope = {
+      enable = true;
+      keymaps = {
+        "<leader>t" = "live_grep";
+        "<leader>f" = "find_files";
+      };
     };
 
     plugins.fidget.enable = true;
