@@ -14,7 +14,7 @@
   };
 
   programs.mpv.enable = true;
-  home.packages = [ pkgs.vlc-bin ];
+  home.packages = [ pkgs.vlc-bin pkgs.discord ];
 
   nixpkgs.config.allowUnfree = true;
 
