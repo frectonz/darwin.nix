@@ -20,6 +20,8 @@ let
     };
   };
 in {
+  home.packages = [ pkgs.google-chrome ];
+
   programs.firefox = {
     enable = true;
     package = firefox;
