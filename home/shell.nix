@@ -82,6 +82,7 @@ in {
     duf
     htop
     btop
+    devenv
     lazygit
     ripgrep
     workspace
