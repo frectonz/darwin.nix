@@ -275,6 +275,7 @@
 
     plugins.lualine.enable = true;
     plugins.bufferline.enable = true;
+    plugins.autoclose.enable = true;
 
     plugins.web-devicons.enable = true;
     plugins.telescope = {
