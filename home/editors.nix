@@ -280,6 +280,35 @@
       "<leader>t" = "live_grep";
       "<leader>f" = "find_files";
     };
+
+    plugins.lsp = {
+      enable = true;
+      inlayHints = true;
+      keymaps.lspBuf = {
+        K = "hover";
+        gD = "references";
+        gd = "definition";
+        gi = "implementation";
+        gt = "type_definition";
+      };
+
+      servers.nixd.enable = true;
+      servers.rust_analyzer = {
+        enable = true;
+        installCargo = true;
+        installRustc = true;
+        installRustfmt = true;
+      };
+      servers.svelte.enable = true;
+      servers.elmls.enable = true;
+      servers.astro.enable = true;
+      servers.tailwindcss.enable = true;
+      servers.emmet_ls.enable = true;
+      servers.cssls.enable = true;
+      servers.typst_lsp.enable = true;
+      servers.solargraph.enable = true;
+      servers.elixirls.enable = true;
+    };
   };
 
   home.sessionVariables = { EDITOR = "hx"; };
