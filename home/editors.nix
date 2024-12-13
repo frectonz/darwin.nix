@@ -343,6 +343,8 @@
         gd = "definition";
         gi = "implementation";
         gt = "type_definition";
+        "<leader>r" = "rename";
+        "<leader>a" = "code_action";
       };
 
       servers.nixd.enable = true;
