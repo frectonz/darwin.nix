@@ -363,6 +363,7 @@
       servers.typst_lsp.enable = true;
       servers.solargraph.enable = true;
       servers.elixirls.enable = true;
+      servers.ts_ls.enable = true;
     };
   };
 
