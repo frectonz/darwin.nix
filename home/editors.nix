@@ -338,11 +338,11 @@
       enable = true;
       inlayHints = true;
       keymaps.lspBuf = {
-        K = "hover";
         gD = "references";
         gd = "definition";
         gi = "implementation";
         gt = "type_definition";
+        "<leader>k" = "hover";
         "<leader>r" = "rename";
         "<leader>a" = "code_action";
       };
@@ -371,6 +371,7 @@
     enable = true;
     settings = {
       fork = true;
+      tabs = false;
       maximized = true;
       font.size = 16.0;
       font.bold.family = "FiraCode Nerd Font";
