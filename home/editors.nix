@@ -372,6 +372,10 @@
     settings = {
       fork = true;
       maximized = true;
+      font.size = 16.0;
+      font.bold.family = "FiraCode Nerd Font";
+      font.italic.family = "FiraCode Nerd Font";
+      font.normal.family = "FiraCode Nerd Font";
     };
   };
 
