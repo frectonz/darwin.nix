@@ -87,5 +87,10 @@ in {
     ripgrep
     workspace
     difftastic
+
+    yarn
+    nodejs
+    cocoapods
+    clang-tools
   ];
 }
