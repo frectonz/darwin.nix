@@ -34,6 +34,7 @@ in {
     functions = { fish_greeting = ""; };
     shellInit = ''
       eval "$(/opt/homebrew/bin/brew shellenv)"
+      fish_add_path /Users/frectonz/.local/share/gem/ruby/3.3.0/bin/
     '';
   };
 
@@ -91,7 +92,9 @@ in {
     workspace
     difftastic
 
+    # for react native projects
     yarn
+    ruby
     nodejs
     clang-tools
   ];
