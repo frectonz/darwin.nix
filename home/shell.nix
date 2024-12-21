@@ -32,6 +32,9 @@ in {
       rebuild = "darwin-rebuild switch --flake ~/darwin.nix/";
     };
     functions = { fish_greeting = ""; };
+    shellInit = ''
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    '';
   };
 
   programs.starship = {
