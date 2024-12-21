@@ -90,7 +90,6 @@ in {
 
     yarn
     nodejs
-    cocoapods
     clang-tools
   ];
 }
