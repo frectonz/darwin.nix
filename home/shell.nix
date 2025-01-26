@@ -96,6 +96,8 @@ in {
     # for react native projects
     yarn
     ruby
+    pnpm
+    wget
     nodejs
     clang-tools
   ];
