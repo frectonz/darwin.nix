@@ -93,7 +93,7 @@ in {
     workspace
     difftastic
 
-    # for react native projects
+    sfz
     yarn
     ruby
     pnpm
