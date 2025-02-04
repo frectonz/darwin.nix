@@ -93,6 +93,8 @@ in {
     workspace
     difftastic
 
+    fd
+    uv
     sfz
     yarn
     ruby
