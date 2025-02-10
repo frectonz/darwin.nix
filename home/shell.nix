@@ -33,6 +33,16 @@ in {
     };
     functions = { fish_greeting = ""; };
     shellInit = ''
+      export IPHONEOS_DEPLOYMENT_TARGET=18.2
+      export ANDROID_HOME=/Users/frectonz/Library/Android/sdk
+      export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+      export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk
+
+      fish_add_path $ANDROID_HOME/platform-tools
+      fish_add_path $ANDROID_HOME/tools
+      fish_add_path $ANDROID_HOME/tools/bin
+      fish_add_path $ANDROID_HOME/emulator
+
       eval "$(/opt/homebrew/bin/brew shellenv)"
       fish_add_path /Users/frectonz/.local/share/gem/ruby/3.3.0/bin/
     '';
