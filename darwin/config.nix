@@ -8,7 +8,6 @@
   homebrew.enable = true;
 
   # Necessary for using flakes on this system.
-  nix.settings.sandbox = true;
   nix.settings.experimental-features = "nix-command flakes";
 
   users.users.frectonz = {
