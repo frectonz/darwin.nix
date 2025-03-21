@@ -63,6 +63,7 @@ in {
       user.signing.key = "9CFA458945B7094F";
       commit.gpgSign = true;
       gpg.program = "${config.programs.gpg.package}/bin/gpg2";
+      http.version = "HTTP/1.1";
     };
   };
 
