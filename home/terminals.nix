@@ -2,11 +2,6 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      terminal.shell = {
-        program = "/bin/zsh";
-        args = [ "-c" "fish" ];
-      };
-
       window.padding = {
         x = 10;
         y = 10;
