@@ -112,6 +112,7 @@ in {
     pnpm
     wget
     nodejs
+    watchman
     clang-tools
   ];
 }
