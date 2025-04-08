@@ -1,5 +1,5 @@
 { pkgs, config, ... }: {
-  imports = [ ./shell.nix ./terminals.nix ./editors.nix ./browsers.nix ];
+  imports = [ ./shell.nix ./terminals.nix ./editors.nix ];
 
   services.gpg-agent.enable = true;
   programs.gpg.enable = true;
@@ -12,9 +12,6 @@
       PASSWORD_STORE_KEY = "9CFA458945B7094F";
     };
   };
-
-  programs.mpv.enable = true;
-  home.packages = [ pkgs.vlc-bin pkgs.discord ];
 
   nixpkgs.config.allowUnfree = true;
 

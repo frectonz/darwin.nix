@@ -5,8 +5,6 @@
 
   fonts.packages = with pkgs; [ nerd-fonts.fira-code ];
 
-  homebrew.enable = true;
-
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
