@@ -8,8 +8,13 @@
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
+  programs.fish.enable = true;
+
   users.users.frectonz = {
     name = "frectonz";
     home = "/Users/frectonz";
+    shell = pkgs.fish;
   };
+
+  environment.variables = { TERMINAL = "alacritty"; };
 }

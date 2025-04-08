@@ -47,9 +47,4 @@
       };
     };
   };
-
-  home.sessionVariables = {
-    SHELL = "fish";
-    TERMINAL = "alacritty";
-  };
 }
