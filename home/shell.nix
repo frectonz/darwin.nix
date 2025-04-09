@@ -42,6 +42,7 @@ in {
       fish_add_path $ANDROID_HOME/tools
       fish_add_path $ANDROID_HOME/tools/bin
       fish_add_path $ANDROID_HOME/emulator
+      fish_add_path $ANDROID_HOME/cmdline-tools/latest/bin
 
       eval "$(/opt/homebrew/bin/brew shellenv)"
       fish_add_path /Users/frectonz/.local/share/gem/ruby/3.3.0/bin/
@@ -111,7 +112,9 @@ in {
     ruby
     pnpm
     wget
+    ninja
     nodejs
+    pkgconf
     watchman
     clang-tools
   ];
