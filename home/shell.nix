@@ -117,5 +117,7 @@ in {
     pkgconf
     watchman
     clang-tools
+    rust-analyzer
+    typescript-language-server
   ];
 }
