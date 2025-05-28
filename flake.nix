@@ -59,7 +59,6 @@
               nixvim.homeManagerModules.nixvim
             ];
 
-            home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.frectonz = import ./home/config.nix;
           }

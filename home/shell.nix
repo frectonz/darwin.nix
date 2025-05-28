@@ -101,7 +101,6 @@ in {
     devenv
     lazygit
     ripgrep
-    diskonaut
     workspace
     difftastic
 
