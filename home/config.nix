@@ -1,5 +1,10 @@
-{ pkgs, config, ... }: {
-  imports = [ ./shell.nix ./terminals.nix ./editors.nix ];
+{ pkgs, config, ... }:
+{
+  imports = [
+    ./shell.nix
+    ./terminals.nix
+    ./editors.nix
+  ];
 
   services.gpg-agent.enable = true;
   programs.gpg.enable = true;

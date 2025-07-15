@@ -3,7 +3,8 @@ let
   workspace = pkgs.writeShellScriptBin "workspace" ''
     find ~/workspace -maxdepth 1 -type d | ${pkgs.fzf}/bin/fzf
   '';
-in {
+in
+{
   programs.fish = {
     enable = true;
     shellAliases = {
@@ -31,7 +32,9 @@ in {
       dev = "nix develop -c fish";
       rebuild = "darwin-rebuild switch --flake ~/darwin.nix/";
     };
-    functions = { fish_greeting = ""; };
+    functions = {
+      fish_greeting = "";
+    };
     shellInit = ''
       export IPHONEOS_DEPLOYMENT_TARGET=18.2
       export ANDROID_HOME=/Users/frectonz/Library/Android/sdk
@@ -118,5 +121,7 @@ in {
     clang-tools
     rust-analyzer
     typescript-language-server
+
+    ffmpeg
   ];
 }

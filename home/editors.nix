@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.helix = {
     enable = true;
     settings = {
@@ -19,7 +20,9 @@
         indent-guides.render = true;
       };
       keys.insert = {
-        j = { k = "normal_mode"; }; # Maps `jk` to exit insert mode
+        j = {
+          k = "normal_mode";
+        }; # Maps `jk` to exit insert mode
       };
     };
   };
@@ -31,7 +34,10 @@
     opts = {
       backup = false;
       clipboard = "unnamedplus";
-      completeopt = [ "menuone" "noselect" ];
+      completeopt = [
+        "menuone"
+        "noselect"
+      ];
       conceallevel = 0;
       fileencoding = "utf-8";
       hlsearch = true;
@@ -68,163 +74,165 @@
       maplocalleader = " ";
     };
 
-    keymaps = let
-      options = {
-        noremap = true;
-        silent = true;
-      };
-    in [
-      {
-        inherit options;
-        key = "<C-h>";
-        action = "<C-w>h";
-        mode = "n";
-      }
-      {
-        inherit options;
-        key = "<C-j>";
-        action = "<C-w>j";
-        mode = "n";
-      }
-      {
-        inherit options;
-        key = "<C-k>";
-        action = "<C-w>k";
-        mode = "n";
-      }
-      {
-        inherit options;
-        key = "<C-l>";
-        action = "<C-w>l";
-        mode = "n";
-      }
-      {
-        inherit options;
-        key = "<C-Up>";
-        action = ":resize -2<CR>";
-        mode = "n";
-      }
-      {
-        inherit options;
-        key = "<C-Down>";
-        action = ":resize +2<CR>";
-        mode = "n";
-      }
-      {
-        inherit options;
-        key = "<C-Left>";
-        action = ":vertical resize -2<CR>";
-        mode = "n";
-      }
-      {
-        inherit options;
-        key = "<C-Right>";
-        action = ":vertical resize +2<CR>";
-        mode = "n";
-      }
-      {
-        inherit options;
-        key = "<S-l>";
-        action = ":bnext<CR>";
-        mode = "n";
-      }
-      {
-        inherit options;
-        key = "<S-h>";
-        action = ":bprevious<CR>";
-        mode = "n";
-      }
-      {
-        inherit options;
-        key = "<A-j>";
-        action = "<Esc>:m .+1<CR>";
-        mode = "n";
-      }
-      {
-        inherit options;
-        key = "<A-k>";
-        action = "<Esc>:m .-2<CR>";
-        mode = "n";
-      }
-      {
-        inherit options;
-        key = "jk";
-        action = "<ESC>";
-        mode = "i";
-      }
-      {
-        inherit options;
-        key = "<";
-        action = "<gv";
-        mode = "v";
-      }
-      {
-        inherit options;
-        key = ">";
-        action = ">gv";
-        mode = "v";
-      }
-      {
-        inherit options;
-        key = "<A-j>";
-        action = ":m .+1<CR>==";
-        mode = "v";
-      }
-      {
-        inherit options;
-        key = "<A-k>";
-        action = ":m .-2<CR>==";
-        mode = "v";
-      }
-      {
-        inherit options;
-        key = "<A-k>";
-        action = ":move '<-2<CR>gv-gv";
-        mode = "x";
-      }
-      {
-        inherit options;
-        key = "<A-j>";
-        action = ":move '>+1<CR>gv-gv";
-        mode = "x";
-      }
-      {
-        inherit options;
-        key = "<leader>e";
-        action = ":Explore<cr>";
-        mode = "n";
-      }
-      {
-        inherit options;
-        key = "<Up>";
-        action = "";
-        mode = "";
-      }
-      {
-        inherit options;
-        key = "<Down>";
-        action = "";
-        mode = "";
-      }
-      {
-        inherit options;
-        key = "<Left>";
-        action = "";
-        mode = "";
-      }
-      {
-        inherit options;
-        key = "<Right>";
-        action = "";
-        mode = "";
-      }
-      {
-        inherit options;
-        key = "<leader>s";
-        action = ":w<CR>";
-        mode = "n";
-      }
-    ];
+    keymaps =
+      let
+        options = {
+          noremap = true;
+          silent = true;
+        };
+      in
+      [
+        {
+          inherit options;
+          key = "<C-h>";
+          action = "<C-w>h";
+          mode = "n";
+        }
+        {
+          inherit options;
+          key = "<C-j>";
+          action = "<C-w>j";
+          mode = "n";
+        }
+        {
+          inherit options;
+          key = "<C-k>";
+          action = "<C-w>k";
+          mode = "n";
+        }
+        {
+          inherit options;
+          key = "<C-l>";
+          action = "<C-w>l";
+          mode = "n";
+        }
+        {
+          inherit options;
+          key = "<C-Up>";
+          action = ":resize -2<CR>";
+          mode = "n";
+        }
+        {
+          inherit options;
+          key = "<C-Down>";
+          action = ":resize +2<CR>";
+          mode = "n";
+        }
+        {
+          inherit options;
+          key = "<C-Left>";
+          action = ":vertical resize -2<CR>";
+          mode = "n";
+        }
+        {
+          inherit options;
+          key = "<C-Right>";
+          action = ":vertical resize +2<CR>";
+          mode = "n";
+        }
+        {
+          inherit options;
+          key = "<S-l>";
+          action = ":bnext<CR>";
+          mode = "n";
+        }
+        {
+          inherit options;
+          key = "<S-h>";
+          action = ":bprevious<CR>";
+          mode = "n";
+        }
+        {
+          inherit options;
+          key = "<A-j>";
+          action = "<Esc>:m .+1<CR>";
+          mode = "n";
+        }
+        {
+          inherit options;
+          key = "<A-k>";
+          action = "<Esc>:m .-2<CR>";
+          mode = "n";
+        }
+        {
+          inherit options;
+          key = "jk";
+          action = "<ESC>";
+          mode = "i";
+        }
+        {
+          inherit options;
+          key = "<";
+          action = "<gv";
+          mode = "v";
+        }
+        {
+          inherit options;
+          key = ">";
+          action = ">gv";
+          mode = "v";
+        }
+        {
+          inherit options;
+          key = "<A-j>";
+          action = ":m .+1<CR>==";
+          mode = "v";
+        }
+        {
+          inherit options;
+          key = "<A-k>";
+          action = ":m .-2<CR>==";
+          mode = "v";
+        }
+        {
+          inherit options;
+          key = "<A-k>";
+          action = ":move '<-2<CR>gv-gv";
+          mode = "x";
+        }
+        {
+          inherit options;
+          key = "<A-j>";
+          action = ":move '>+1<CR>gv-gv";
+          mode = "x";
+        }
+        {
+          inherit options;
+          key = "<leader>e";
+          action = ":Explore<cr>";
+          mode = "n";
+        }
+        {
+          inherit options;
+          key = "<Up>";
+          action = "";
+          mode = "";
+        }
+        {
+          inherit options;
+          key = "<Down>";
+          action = "";
+          mode = "";
+        }
+        {
+          inherit options;
+          key = "<Left>";
+          action = "";
+          mode = "";
+        }
+        {
+          inherit options;
+          key = "<Right>";
+          action = "";
+          mode = "";
+        }
+        {
+          inherit options;
+          key = "<leader>s";
+          action = ":w<CR>";
+          mode = "n";
+        }
+      ];
 
     plugins.treesitter = {
       enable = true;
@@ -233,7 +241,9 @@
           enable = true;
           additional_vim_regex_highlighting = true;
         };
-        indent = { enable = true; };
+        indent = {
+          enable = true;
+        };
         rainbow = {
           enable = true;
           extended_mode = true;
@@ -291,12 +301,24 @@
       enable = true;
       settings = {
         signs = {
-          add = { text = "│+"; };
-          change = { text = "│-"; };
-          delete = { text = "_"; };
-          topdelete = { text = "‾"; };
-          changedelete = { text = "~"; };
-          untracked = { text = "┆"; };
+          add = {
+            text = "│+";
+          };
+          change = {
+            text = "│-";
+          };
+          delete = {
+            text = "_";
+          };
+          topdelete = {
+            text = "‾";
+          };
+          changedelete = {
+            text = "~";
+          };
+          untracked = {
+            text = "┆";
+          };
         };
         attach_to_untracked = true;
         current_line_blame = true;
@@ -306,8 +328,11 @@
     plugins.cmp = {
       enable = true;
       autoEnableSources = true;
-      settings.sources =
-        [ { name = "nvim_lsp"; } { name = "path"; } { name = "buffer"; } ];
+      settings.sources = [
+        { name = "nvim_lsp"; }
+        { name = "path"; }
+        { name = "buffer"; }
+      ];
       settings.mapping = {
         "<C-Space>" = "cmp.mapping.complete()";
         "<C-d>" = "cmp.mapping.scroll_docs(-4)";
@@ -318,16 +343,27 @@
         "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
       };
 
-      filetype = { gitcommit = { sources = [{ name = "git"; }]; }; };
+      filetype = {
+        gitcommit = {
+          sources = [ { name = "git"; } ];
+        };
+      };
 
       cmdline = {
-        "/" = { sources = [{ name = "buffer"; }]; };
+        "/" = {
+          sources = [ { name = "buffer"; } ];
+        };
         ":" = {
           sources = [
             { name = "path"; }
             {
               name = "cmdline";
-              option = { ignore_cmds = [ "Man" "!" ]; };
+              option = {
+                ignore_cmds = [
+                  "Man"
+                  "!"
+                ];
+              };
             }
           ];
         };
@@ -379,5 +415,7 @@
     };
   };
 
-  home.sessionVariables = { EDITOR = "hx"; };
+  home.sessionVariables = {
+    EDITOR = "hx";
+  };
 }

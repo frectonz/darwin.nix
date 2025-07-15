@@ -16,18 +16,32 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, mac-app-util, nur
-    , nixvim }:
+  outputs =
+    inputs@{
+      self,
+      nix-darwin,
+      nixpkgs,
+      home-manager,
+      mac-app-util,
+      nur,
+      nixvim,
+    }:
     let
       systems = [ "aarch64-darwin" ];
 
-      forAllSystems = function:
-        nixpkgs.lib.genAttrs systems (system:
-          function (import nixpkgs {
-            inherit system;
-            overlays = [ ];
-          }));
-    in {
+      forAllSystems =
+        function:
+        nixpkgs.lib.genAttrs systems (
+          system:
+          function (
+            import nixpkgs {
+              inherit system;
+              overlays = [ ];
+            }
+          )
+        );
+    in
+    {
       darwinConfigurations."maxwell" = nix-darwin.lib.darwinSystem {
         pkgs = import nixpkgs {
           system = "aarch64-darwin";
@@ -65,6 +79,22 @@
         ];
       };
 
-      formatter = forAllSystems (pkgs: pkgs.nixfmt-classic);
+      formatter = forAllSystems (
+        pkgs:
+        pkgs.treefmt.withConfig {
+          runtimeInputs = [ pkgs.nixfmt-rfc-style ];
+
+          settings = {
+            # Log level for files treefmt won't format
+            on-unmatched = "info";
+
+            # Configure nixfmt for .nix files
+            formatter.nixfmt = {
+              command = "nixfmt";
+              includes = [ "*.nix" ];
+            };
+          };
+        }
+      );
     };
 }

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [ ];
@@ -7,6 +8,7 @@
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
+  nix.settings.sandbox = true;
 
   programs.fish.enable = true;
 
@@ -16,5 +18,7 @@
     shell = pkgs.fish;
   };
 
-  environment.variables = { TERMINAL = "alacritty"; };
+  environment.variables = {
+    TERMINAL = "alacritty";
+  };
 }
