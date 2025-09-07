@@ -110,6 +110,7 @@ in
     fd
     uv
     sfz
+    bun
     yarn
     ruby
     pnpm
