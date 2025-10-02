@@ -7,12 +7,9 @@
   nix.settings.experimental-features = "nix-command flakes";
   nix.settings.sandbox = true;
 
-  programs.fish.enable = true;
-
   users.users.frectonz = {
     name = "frectonz";
     home = "/Users/frectonz";
-    shell = pkgs.fish;
   };
 
   environment.variables = {

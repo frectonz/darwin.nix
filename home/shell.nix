@@ -77,7 +77,6 @@ in
 
   programs.zellij = {
     enable = true;
-    enableFishIntegration = true;
   };
 
   home.packages = with pkgs; [
@@ -109,5 +108,7 @@ in
     typescript-language-server
 
     ffmpeg
+
+    rust-bin.stable.latest.default
   ];
 }

@@ -311,7 +311,28 @@
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
-        "nur": "nur"
+        "nur": "nur",
+        "rust-overlay": "rust-overlay"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1759372351,
+        "narHash": "sha256-kULiC2oMMuyaO92gPiu+6XBfeXuFcXaauwo0tXAwXdQ=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "7ef14552303de7128662666f9a71342099ffc725",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "systems": {

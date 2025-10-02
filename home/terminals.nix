@@ -3,6 +3,15 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      terminal.shell = {
+        program = "/bin/zsh";
+        args = [
+          "-l"
+          "-c"
+          "exec fish"
+        ];
+      };
+
       window.padding = {
         x = 10;
         y = 10;

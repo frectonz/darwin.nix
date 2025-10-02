@@ -14,6 +14,9 @@
 
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
+    rust-overlay.url = "github:oxalica/rust-overlay";
+    rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -25,6 +28,7 @@
       mac-app-util,
       nur,
       nixvim,
+      rust-overlay,
     }:
     let
       systems = [ "aarch64-darwin" ];
@@ -36,7 +40,7 @@
           function (
             import nixpkgs {
               inherit system;
-              overlays = [ ];
+              overlays = [ (import rust-overlay) ];
             }
           )
         );
@@ -45,7 +49,10 @@
       darwinConfigurations."maxwell" = nix-darwin.lib.darwinSystem {
         pkgs = import nixpkgs {
           system = "aarch64-darwin";
-          overlays = [ nur.overlays.default ];
+          overlays = [
+            nur.overlays.default
+            (import rust-overlay)
+          ];
           config.allowUnfree = true;
         };
 
@@ -73,7 +80,7 @@
               nixvim.homeManagerModules.nixvim
             ];
 
-            home-manager.useUserPackages = true;
+            home-manager.useGlobalPkgs = true;
             home-manager.users.frectonz = import ./home/config.nix;
           }
         ];
