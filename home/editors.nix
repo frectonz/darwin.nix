@@ -396,7 +396,6 @@
       servers.tailwindcss.enable = true;
       servers.emmet_ls.enable = true;
       servers.cssls.enable = true;
-      servers.solargraph.enable = true;
       servers.elixirls.enable = true;
       servers.ts_ls.enable = true;
     };
