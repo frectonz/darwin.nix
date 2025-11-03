@@ -44,15 +44,14 @@ in
 
   programs.git = {
     enable = true;
-    userName = "frectonz";
-    userEmail = "fraol0912@gmail.com";
-    extraConfig = {
+    settings = {
+      user.name = "frectonz";
+      user.email = "fraol0912@gmail.com";
       init.defaultBranch = "main";
       diff.external = "difft";
       user.signing.key = "9CFA458945B7094F";
       commit.gpgSign = true;
       gpg.program = "${config.programs.gpg.package}/bin/gpg2";
-      http.version = "HTTP/1.1";
     };
   };
 
