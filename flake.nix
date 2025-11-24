@@ -69,7 +69,7 @@
           home-manager.darwinModules.home-manager
           {
             home-manager.sharedModules = [
-              nixvim.homeManagerModules.nixvim
+              nixvim.homeModules.nixvim
             ];
 
             home-manager.useGlobalPkgs = true;
