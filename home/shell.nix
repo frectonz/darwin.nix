@@ -87,7 +87,7 @@ in
     duf
     htop
     btop
-    devenv
+    ffmpeg
     lazygit
     ripgrep
     workspace
@@ -104,13 +104,6 @@ in
     ninja
     nodejs
     pkgconf
-    watchman
-    clang-tools
-    rust-analyzer
     typescript-language-server
-
-    ffmpeg
-
-    rust-bin.stable.latest.default
   ];
 }

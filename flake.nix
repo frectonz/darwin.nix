@@ -10,9 +10,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    mac-app-util.url = "github:hraban/mac-app-util";
-    mac-app-util.inputs.nixpkgs.follows = "nixpkgs";
-
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -29,7 +26,6 @@
       nix-darwin,
       nixpkgs,
       home-manager,
-      mac-app-util,
       nur,
       nixvim,
       rust-overlay,
@@ -61,31 +57,24 @@
         };
 
         modules = [
-          mac-app-util.darwinModules.default
           {
-            # Used for backwards compatibility, please read the changelog before changing.
-            # $ darwin-rebuild changelog
             system.stateVersion = 5;
-
-            # Set Git commit hash for darwin-version.
             system.configurationRevision = self.rev or self.dirtyRev or null;
-
-            # The platform the configuration will be used on.
             nixpkgs.hostPlatform = "aarch64-darwin";
             nixpkgs.config.allowUnfree = true;
           }
+
           ./darwin/config.nix
 
           home-manager.darwinModules.home-manager
           {
-            # To enable it for all users:
             home-manager.sharedModules = [
-              mac-app-util.homeManagerModules.default
               nixvim.homeManagerModules.nixvim
             ];
 
             home-manager.useGlobalPkgs = true;
             home-manager.users.frectonz = import ./home/config.nix;
+            home-manager.backupCommand = "echo";
           }
         ];
       };
