@@ -22,7 +22,7 @@
       keys.insert = {
         j = {
           k = "normal_mode";
-        }; # Maps `jk` to exit insert mode
+        };
       };
     };
   };

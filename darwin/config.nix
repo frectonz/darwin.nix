@@ -10,7 +10,10 @@
   users.users.frectonz = {
     name = "frectonz";
     home = "/Users/frectonz";
+    shell = pkgs.fish;
   };
+
+  programs.fish.enable = true;
 
   environment.variables = {
     TERMINAL = "alacritty";
