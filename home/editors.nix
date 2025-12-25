@@ -400,6 +400,10 @@
       servers.elixirls.enable = true;
       servers.ts_ls.enable = true;
     };
+
+    plugins.lsp-format = {
+      enable = true;
+    };
   };
 
   programs.neovide = {
