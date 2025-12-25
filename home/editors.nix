@@ -17,6 +17,7 @@
         };
 
         lsp.display-inlay-hints = true;
+        lsp.display-progress-messages = true;
         indent-guides.render = true;
       };
       keys.insert = {
