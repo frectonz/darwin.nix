@@ -101,6 +101,7 @@ in
     ruby
     pnpm
     wget
+    nixd
     ninja
     nodejs
     pkgconf
