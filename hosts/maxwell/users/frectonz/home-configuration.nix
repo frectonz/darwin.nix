@@ -1,6 +1,7 @@
-{ pkgs, ... }:
+{ flake, pkgs, ... }:
 {
   imports = [
+    flake.inputs.nix-index-database.homeModules.nix-index
     ./fish.nix
     ./gh.nix
     ./git.nix
@@ -10,6 +11,8 @@
     ./pass.nix
     ./starship.nix
   ];
+
+  programs.nix-index-database.comma.enable = true;
 
   home.packages = with pkgs; [
     bat
