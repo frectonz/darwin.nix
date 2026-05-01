@@ -14,6 +14,13 @@
 
   programs.nix-index-database.comma.enable = true;
 
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    darwinFlake = "/Users/frectonz/darwin.nix";
+  };
+
   home.packages = with pkgs; [
     bat
     lsd
