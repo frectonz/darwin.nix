@@ -1,33 +1,5 @@
 { pkgs, ... }:
 {
-  programs.helix = {
-    enable = true;
-    settings = {
-      theme = "ayu_evolve";
-      editor = {
-        mouse = false;
-        line-number = "relative";
-        bufferline = "multiple";
-        cursor-shape.insert = "bar";
-
-        whitespace.render = {
-          space = "all";
-          tab = "all";
-          newline = "none";
-        };
-
-        lsp.display-inlay-hints = true;
-        lsp.display-progress-messages = true;
-        indent-guides.render = true;
-      };
-      keys.insert = {
-        j = {
-          k = "normal_mode";
-        };
-      };
-    };
-  };
-
   programs.nixvim = {
     enable = true;
     vimAlias = true;
@@ -387,9 +359,8 @@
       servers.nixd.enable = true;
       servers.rust_analyzer = {
         enable = true;
-        installCargo = true;
-        installRustc = true;
-        installRustfmt = true;
+        installCargo = false;
+        installRustc = false;
       };
       servers.svelte.enable = true;
       servers.elmls.enable = true;
@@ -404,22 +375,5 @@
     plugins.lsp-format = {
       enable = true;
     };
-  };
-
-  programs.neovide = {
-    enable = true;
-    settings = {
-      fork = true;
-      tabs = false;
-      maximized = true;
-      font.size = 16.0;
-      font.bold.family = "FiraCode Nerd Font";
-      font.italic.family = "FiraCode Nerd Font";
-      font.normal.family = "FiraCode Nerd Font";
-    };
-  };
-
-  home.sessionVariables = {
-    EDITOR = "hx";
   };
 }
