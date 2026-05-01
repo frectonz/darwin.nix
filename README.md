@@ -1,7 +1,7 @@
 # darwin.nix
 
-nix config my first real computer
+Darwin NixOS System
 
 ```
-darwin-rebuild switch --flake ~/darwin.nix/
+nh darwin switch
 ```
