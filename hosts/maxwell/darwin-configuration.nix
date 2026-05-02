@@ -27,6 +27,7 @@
   };
 
   programs.fish.enable = true;
+  environment.shells = [ pkgs.fish ];
 
   home-manager.backupCommand = "echo";
   home-manager.sharedModules = [
