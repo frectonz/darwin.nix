@@ -1,25 +1,20 @@
-{ flake, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports = [
-    flake.inputs.nix-index-database.homeModules.nix-index
+    ./atuin.nix
+    ./direnv.nix
     ./fish.nix
     ./gh.nix
     ./git.nix
     ./gpg.nix
     ./helix.nix
+    ./nh.nix
+    ./nix-index.nix
     ./nixvim.nix
     ./pass.nix
     ./starship.nix
+    ./zellij.nix
   ];
-
-  programs.nix-index-database.comma.enable = true;
-
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
-    darwinFlake = "/Users/frectonz/darwin.nix";
-  };
 
   home.packages = with pkgs; [
     bat
@@ -49,23 +44,6 @@
 
     rust-bin.stable.latest.default
   ];
-
-  programs.atuin = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
-
-  programs.zellij = {
-    enable = true;
-    settings = {
-      default_shell = "fish";
-    };
-  };
 
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;
