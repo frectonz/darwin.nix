@@ -254,7 +254,23 @@
       ];
     };
 
-    colorschemes.ayu.enable = true;
+    colorschemes.ayu = {
+      enable = true;
+      settings.overrides.__raw = ''
+        function()
+          return {
+            Normal = { bg = "#000000" },
+            NormalNC = { bg = "#000000" },
+            SignColumn = { bg = "#000000" },
+            LineNr = { bg = "#000000" },
+            EndOfBuffer = { bg = "#000000" },
+            VertSplit = { bg = "#000000" },
+            StatusLine = { bg = "#000000" },
+            StatusLineNC = { bg = "#000000" },
+          }
+        end
+      '';
+    };
 
     plugins.lualine.enable = true;
     plugins.bufferline.enable = true;
