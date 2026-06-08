@@ -24,7 +24,7 @@
       stat = "git status";
 
       dev = "nix develop -c fish";
-      rebuild = "sudo darwin-rebuild switch --flake ~/darwin.nix/";
+      rebuild = "sudo darwin-rebuild switch --flake .";
     };
     functions = {
       fish_greeting = "";

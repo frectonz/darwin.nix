@@ -14,6 +14,7 @@
     ./pass.nix
     ./starship.nix
     ./zellij.nix
+    ./jj.nix
   ];
 
   home.packages = with pkgs; [
