@@ -50,5 +50,4 @@
   programs.home-manager.enable = true;
 
   programs.asciinema.enable = true;
-  programs.asciinema.package = pkgs.asciinema_3;
 }
