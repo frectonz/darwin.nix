@@ -372,21 +372,6 @@
         "<leader>r" = "rename";
         "<leader>a" = "code_action";
       };
-
-      servers.nixd.enable = true;
-      servers.rust_analyzer = {
-        enable = true;
-        installCargo = false;
-        installRustc = false;
-      };
-      servers.svelte.enable = true;
-      servers.elmls.enable = true;
-      servers.astro.enable = true;
-      servers.tailwindcss.enable = true;
-      servers.emmet_ls.enable = true;
-      servers.cssls.enable = true;
-      servers.elixirls.enable = true;
-      servers.ts_ls.enable = true;
     };
 
     plugins.lsp-format = {
