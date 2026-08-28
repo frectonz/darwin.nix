@@ -3,6 +3,7 @@
   programs.nixvim = {
     enable = true;
     vimAlias = true;
+    nixpkgs.source = pkgs.path;
 
     opts = {
       backup = false;
