@@ -21,9 +21,6 @@
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.inputs.systems.follows = "systems";
-
-    rust-overlay.url = "github:oxalica/rust-overlay";
-    rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

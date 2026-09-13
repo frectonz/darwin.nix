@@ -28,22 +28,10 @@
     ripgrep
     workspace
     difftastic
-
     fd
-    uv
-    sfz
-    bun
-    yarn
-    ruby
-    pnpm
     wget
-    nixd
-    ninja
-    nodejs
-    pkgconf
-    typescript-language-server
 
-    rust-bin.stable.latest.default
+    mole-cleaner
   ];
 
   home.stateVersion = "24.11";
