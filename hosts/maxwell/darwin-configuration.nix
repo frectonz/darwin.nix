@@ -1,6 +1,7 @@
 { flake, ... }:
 {
   imports = [
+    ./defaults
     ./fonts.nix
     ./home-manager.nix
     ./nix.nix
