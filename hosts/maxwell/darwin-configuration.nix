@@ -1,12 +1,12 @@
 { flake, ... }:
 {
   imports = [
-    ./defaults
-    ./fonts.nix
-    ./home-manager.nix
     ./nix.nix
-    ./nixpkgs.nix
+    ./defaults
     ./user.nix
+    ./fonts.nix
+    ./nixpkgs.nix
+    ./home-manager.nix
   ];
 
   system.stateVersion = 5;
