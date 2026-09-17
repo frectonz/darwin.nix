@@ -7,5 +7,6 @@
     ./privacy.nix
     ./keyboard.nix
     ./trackpad.nix
+    ./cleanup.nix
   ];
 }
