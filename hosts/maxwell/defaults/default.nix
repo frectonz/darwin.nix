@@ -7,6 +7,5 @@
     ./privacy.nix
     ./keyboard.nix
     ./trackpad.nix
-    ./screenshots.nix
   ];
 }
