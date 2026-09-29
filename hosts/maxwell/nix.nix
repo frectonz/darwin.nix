@@ -18,6 +18,10 @@
         connect-timeout = 10;
         http-connections = 25;
         download-attempts = 5;
+        trusted-users = [
+          "root"
+          "frectonz"
+        ];
       };
       channel.enable = false;
       registry = lib.mapAttrs (_: f: { flake = f; }) flakeInputs;
