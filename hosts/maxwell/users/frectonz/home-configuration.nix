@@ -31,6 +31,7 @@
     wget
     ffmpeg
     workspace
+    mekuteriya
     mole-cleaner
   ];
 
