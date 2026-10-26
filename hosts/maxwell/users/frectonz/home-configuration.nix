@@ -30,6 +30,7 @@
   home.packages = with pkgs; [
     duf
     wget
+    openssh
     ffmpeg
     workspace
     mekuteriya
