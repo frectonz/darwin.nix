@@ -24,6 +24,7 @@
     ./asciinema.nix
     ./nix-index.nix
     ./difftastic.nix
+    ./ca-certificates.nix
   ];
 
   home.packages = with pkgs; [
