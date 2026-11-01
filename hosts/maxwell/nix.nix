@@ -11,7 +11,7 @@
     in
     {
       settings = {
-        experimental-features = "nix-command flakes";
+        experimental-features = "nix-command flakes fetch-closure";
         sandbox = true;
         flake-registry = "";
         nix-path = config.nix.nixPath;
